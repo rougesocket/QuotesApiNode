@@ -3,8 +3,9 @@ const debug = require("debug")("app");
 
 const app = express();
 const PORT = process.env.PORT;
+require("dotenv").config();
 
-const quotesRouter = require("./router/quotesRouter");
+const quotesRouter = require("./src/router/quotesRouter");
 
 app.use("/api/quote/", quotesRouter);
 
