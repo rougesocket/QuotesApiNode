@@ -1,4 +1,5 @@
 const express = require("express");
+const debug = require("debug")("app");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -8,5 +9,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`listning to port ${PORT}`);
+  debug(`listning to port ${PORT}`);
 });
