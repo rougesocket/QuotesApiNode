@@ -4,10 +4,14 @@ const debug = require("debug")("app");
 const app = express();
 const PORT = process.env.PORT;
 
+const quotesRouter = require("./router/quotesRouter");
+
+app.use("/api/quote/", quotesRouter);
+
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
 app.listen(PORT, () => {
-  debug(`listning to port ${PORT}`);
+  debug(`listening to port ${PORT}`);
 });
